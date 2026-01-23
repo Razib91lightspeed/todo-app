@@ -1,6 +1,10 @@
 import http from "http";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
+
+if (!PORT) {
+  throw new Error("PORT env var is required");
+}
 
 const server = http.createServer((req, res) => {
   if (req.url === "/") {

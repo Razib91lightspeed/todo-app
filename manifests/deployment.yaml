@@ -15,6 +15,6 @@ spec:
       containers:
         - name: todo-app
           image: razibhasan2/todo-app:1.1.0
-          env:
-            - name: PORT
-              value: "3000"
+          envFrom:
+            - configMapRef:
+                name: todo-app-config
